@@ -1,17 +1,21 @@
 language: cpp
-compiler: gcc
 
-os: linux
+compiler:
+  - gcc
+  - clang
+
+os:
+  - linux
+
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.6
     packages:
       - g++-7
+      - clang-3.6
+
 script:
-- export CC=gcc-7
-- export CXX=g++-7
-- cmake --version
 - cmake CMakeLists.txt
-- cmake --build . --target example_s
-- cmake --build . --target example_h
+- cmake --build .
