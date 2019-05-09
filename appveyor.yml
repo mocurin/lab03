@@ -4,10 +4,6 @@ init:
     - git config --global core.autocrlf input
 
 clone_folder: c:\projects\my-prj
-shallow_clone: true
-
-matrix:
-    fast_finish: false
 
 platform:
     - x64
@@ -17,7 +13,7 @@ configuration:
 
 environment:
     matrix:
-        - TOOLCHAIN: msvc12
+        - TOOLCHAIN: msvc15
 
 build_script:
     - cmake CMakeLists.txt
